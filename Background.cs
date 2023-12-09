@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Background : MonoBehaviour
 {
-    public float speed = 5;
+    public Material bigMaterial;
+    public float scrollSpeed = 0.2f;
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +16,8 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 dir = Vector3.up;
-        transform.position += dir * speed * Time.deltaTime;
+        Vector2 dir = Vector2.up;
+
+        bigMaterial.mainTextureOffset += dir * scrollSpeed * Time.deltaTime;
     }
 }
